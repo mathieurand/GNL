@@ -6,7 +6,7 @@
 /*   By: tokyrand <tokyrand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 09:39:35 by tokyrand          #+#    #+#             */
-/*   Updated: 2026/03/21 15:33:55 by tokyrand         ###   ########.fr       */
+/*   Updated: 2026/04/06 14:11:12 by tokyrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void			*str;
-	size_t			max_nmemb;
 	unsigned long	i;
 
-	if (nmemb == 0 || size == 0)
-	{
-		nmemb = 1;
-		size = 1;
-	}
-	max_nmemb = (size_t)-1 / size;
-	if (max_nmemb < nmemb)
-		return (NULL);
+	if (size && (size_t)-1 / size < nmemb)
+		return ((void *)0);
 	str = malloc(nmemb * size);
 	if (!str)
-		return (NULL);
+		return ((void *)0);
 	i = 0;
 	while (i < (nmemb * size))
 		((unsigned char *)str)[i++] = 0;
@@ -80,7 +73,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	join = ft_calloc(sizeof(char), (s1_len + s2_len + 1));
+	join = ft_calloc((s1_len + s2_len + 1), sizeof(char));
 	if (!join)
 		return (NULL);
 	if (s1)

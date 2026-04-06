@@ -6,7 +6,7 @@
 /*   By: tokyrand <tokyrand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 10:49:27 by tokyrand          #+#    #+#             */
-/*   Updated: 2026/03/20 14:45:33 by tokyrand         ###   ########.fr       */
+/*   Updated: 2026/04/06 15:58:10 by tokyrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 42
 # endif
 
 # ifndef SEP

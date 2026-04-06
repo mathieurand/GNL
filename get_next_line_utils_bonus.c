@@ -6,7 +6,7 @@
 /*   By: tokyrand <tokyrand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 10:48:57 by tokyrand          #+#    #+#             */
-/*   Updated: 2026/03/06 13:58:52 by tokyrand         ###   ########.fr       */
+/*   Updated: 2026/04/04 01:07:59 by tokyrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,6 @@ char	*ft_substr_bonus(char const *s, unsigned int start, size_t len)
 		sub[i] = s[start + i];
 		i++;
 	}
-	sub[start + i] = '\0';
+	sub[i] = '\0';
 	return (sub);
 }

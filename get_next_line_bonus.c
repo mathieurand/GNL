@@ -6,7 +6,7 @@
 /*   By: tokyrand <tokyrand@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 10:51:50 by tokyrand          #+#    #+#             */
-/*   Updated: 2026/03/21 13:08:57 by tokyrand         ###   ########.fr       */
+/*   Updated: 2026/04/06 14:06:45 by tokyrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*extract_line_bonus(char **cloud)
 	return (new_cloud);
 }
 
-static char	*ft_strchr(const char *s)
+static char	*ft_strchr_bonus(const char *s)
 {
 	size_t		i;
 	char		*str;
@@ -39,7 +39,7 @@ static char	*ft_strchr(const char *s)
 	if (!s)
 		return (NULL);
 	str = (char *)s;
-	while (i < ft_strlen(str))
+	while (str[i])
 	{
 		if (str[i] == (char)SEP)
 			return (&(str[i]));
@@ -58,7 +58,7 @@ static char	*get_everything_bonus(int fd, char *cloud)
 
 	read_byte = 1;
 	buff = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	while (read_byte > 0 && !ft_strchr(cloud))
+	while (read_byte > 0 && !ft_strchr_bonus(cloud))
 	{
 		read_byte = read(fd, buff, BUFFER_SIZE);
 		if (read_byte < 0)
